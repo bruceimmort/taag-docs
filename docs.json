@@ -1,20 +1,20 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Mint Starter Kit",
+  "theme": "almond",
+  "name": "Taag",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#5046FF",
+    "light": "#5E55FB",
+    "dark": "#3C35B5"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/taagLogo.png",
   "navigation": {
     "tabs": [
       {
         "tab": "Guides",
         "groups": [
           {
-            "group": "Get Started",
+            "group": "Take a tour",
             "pages": [
               "index",
               "quickstart",
@@ -35,7 +35,7 @@
         ]
       },
       {
-        "tab": "API Reference",
+        "tab": "API Docs",
         "groups": [
           {
             "group": "API Documentation",
@@ -44,7 +44,7 @@
             ]
           },
           {
-            "group": "Endpoint Examples",
+            "group": "API Endpoints",
             "pages": [
               "api-reference/endpoint/get",
               "api-reference/endpoint/create",
@@ -55,7 +55,7 @@
         ]
       }
     ],
-    "global": {
+    "_global": {
       "anchors": [
         {
           "anchor": "Documentation",
@@ -75,11 +75,7 @@
       ]
     }
   },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
-  "navbar": {
+  "_navbar": {
     "links": [
       {
         "label": "Support",
