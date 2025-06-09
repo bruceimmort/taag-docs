@@ -1,27 +1,77 @@
 ---
+
 title: 'Introduction'
-description: 'Build your product fast and scale with market-friendly, flexible pricing.'
+description: "Our pricing engine handles and let's you implement dynamic, location-based pricing so you can offer affordable pricing to everyone and everywhere."
 ---
 
-## Welcome
+## Base URL
 
-Our pricing engine handles and let's you implement **dynamic, location-based pricing** that adjusts to real-world market conditions so you can offer affordable pricing to everyone and everywhere.
+Our pricing API is built on REST principles keeping things smooth and reliable. HTTPS is mandatory on every request. (No HTTP allowed here!)
 
-Why not integrate now to:
+All your requests start with this base URL:
 
-- Create pricing plans for your product
-- Add different rules on each plan
-- Set different prices per region or location
-- Stay aligned to worldwide market without manual updates
-- Set desirable offers to your customers
-- Make pricing simple and flexible for you and your customers
+```bash
+https://taag-api.carllabs.cc
+```
 
-Price accoddingly while building scalable products.
+## Authentication
+
+To get going, just add an Authorization header to your request. Here, `taag_xxxxxxxxx` is your unique key and it should look like this:
+
+Public key
+```bash
+Authorization: taag_pk_xxxxxxxxx
+```
+
+Secret key
+```bash
+Authorization: taag_sk_xxxxxxxxx
+```
+
+<Note>
+  Keep it safe and don’t share it around!
+</Note>
+
+## API Endpoints
+
+Why not integrate now:
+
+<CardGroup cols={2}>
+  <Card
+    title="Get Price"
+    icon="tag"
+    href="https://mintlify.com/docs/settings/global"
+  >
+    Get the right price for your users based on their region.
+  </Card>
+  <Card
+    title="Verify Price"
+    icon="shield-check"
+    href="https://mintlify.com/docs/api-playground/openapi"
+  >
+    Check if a price is correct before showing it to users.
+  </Card>
+  <Card
+    title="Add Subscriber"
+    icon="user-plus"
+    href="https://mintlify.com/docs/content/components/accordions"
+  >
+    Add a new subscriber in just one step.
+  </Card>
+  <Card
+    title="Verify Subscriber"
+    icon="user-check"
+    href="https://mintlify.com/customers"
+  >
+    Confirm if a subscriber exists or is active.
+  </Card>
+</CardGroup>
+
+Set prices smartly while building products that scale.
 
 <Card
-  title="Pricing API Endpoints"
-  icon="dollar-sign"
+  title="Pricing Endpoints"
   href="./endpoint"
 >
-  Start pricing as market leaders already do.
+  Adapt pricing the way top market leaders already do.
 </Card>

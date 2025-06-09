@@ -44,10 +44,15 @@
             ]
           },
           {
-            "group": "API Endpoints",
+            "group": "Pricing",
             "pages": [
               "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
+              "api-reference/endpoint/create"
+            ]
+          },
+          {
+            "group": "Subscribers",
+            "pages": [
               "api-reference/endpoint/delete",
               "api-reference/endpoint/webhook"
             ]

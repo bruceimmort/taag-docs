@@ -1,4 +1,40 @@
 ---
-title: 'Create Plant'
-openapi: 'POST /plants'
+title: 'Verify Price'
+openapi: 'POST /pricing/verify'
 ---
+
+### What's this for?
+Use this endpoint when someone’s ready to pay. It double-checks the pricing rule (using the `ruleId` you got earlier from the `GET /pricing` api endpoint) and returns the **actual amount** you should charge. It helps to keep things accurate.
+
+<Note>
+    This is a server-side call and needs your **secret key** to work. Keep it safe!
+</Note>
+
+### Authentication
+Make sure to include the `Authorization` header:
+```http
+Authorization: taag_sk_xxxxxxxxx
+```
+
+### Example Request
+```json
+{
+  "countryCode": "SE",
+  "ruleId": "cmb6mqodq000139dsl35qnn43"
+}
+```
+
+### Example Response
+```json
+{
+  "countryCode": "SE",
+  "price": 1200,
+  "formatedPrice": "12",
+  "currency": "USD"
+}
+```
+
+### Use case
+Perfect for checkout. This api call confirms the price validity for the selected country and rule, so no surprises when it's time to pay.
+
+**Tip:** Always verify pricing server-side before charging to avoid manipulation from the client side.
