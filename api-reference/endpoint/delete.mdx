@@ -2,3 +2,55 @@
 title: 'Add Subscriber'
 openapi: 'POST /subcribers/new'
 ---
+
+### Use case
+
+Let’s say someone just checked out and paid. Now you want to register them using this endpoint. 
+You will send their `countryCode` and `ruleId`.
+
+---
+
+### Authentication
+
+Make sure to include the `Authorization` header:
+
+```http
+Authorization: taag_sk_xxxxxxxxx
+```
+### Request body
+```json
+{
+  "countryCode": "SE",
+  "ruleId": "cmb6mqodq000139dsl35qnn43"
+}
+```
+<ResponseField name="countryCode" type="string" required> 
+    The country where your subscriber is located.
+</ResponseField> 
+
+<ResponseField name="ruleId" type="string" required> 
+    The pricing rule ID you used during checkout. 
+    You can grab this from the response of the [get price](./get) endpoint. 
+</ResponseField>
+
+### Response
+```json
+{
+  "success": true,
+  "subscriberId": "2d9b73d492898ebd600fbcae7b67c3a5"
+}
+```
+<ResponseField name="success" type="boolean"> 
+    Indicates whether the subscriber was created successfully. 
+</ResponseField> 
+
+<ResponseField name="subscriberId" type="string"> 
+    This is a unique ID for the subscriber you just added. 
+<Tip>
+Store it in your database for future renewals... 
+
+</Tip>
+</ResponseField>
+
+
+> Make sure to call this **after** you successfully charged the customer and confirmed the pricing. That way you will have all you need to manage their subscription later on.
