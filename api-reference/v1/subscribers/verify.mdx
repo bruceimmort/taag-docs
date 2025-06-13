@@ -5,20 +5,24 @@ openapi: 'POST /subscribers/verify'
 
 ---
 
-```http POST
-/subscribers/verify
+### Use case
+
+When it’s time to charge a subscriber again, use this endpoint to verify their pricing. It checks the pricing rule of the subscriber and gives you back the correct price.
+
+```bash POST
+https://taag-api.carllabs.cc/v1/subscribers/verify
 ```
 
 >   First time adding a subscriber?
-    Use the [add Subscriber](./add-subscriber) endpoint first to create their profile.
+    Use the [add subscriber](./new) endpoint first to create their profile.
 
 ---
 
-### Authentication
+### Authorization
 
-Include the `Authorization` header with your **secret key**:
+Include the `Authorization` header with your `secret key`:
 
-```http
+```bash
 Authorization: taag_sk_xxxxxxxxx
 ```
 
@@ -29,7 +33,7 @@ Authorization: taag_sk_xxxxxxxxx
 }
 ```
 <ResponseField name="subscriberId" type="string" required> 
-    The unique ID of the subscriber you previously created using the [add Subscriber](./add-subscriber) endpoint. 
+    The unique ID of the subscriber you previously created using the [add subscriber](./new) endpoint. 
     This ID links them to their pricing rule. 
 </ResponseField>
 
@@ -39,7 +43,7 @@ Authorization: taag_sk_xxxxxxxxx
 	"success": true,
 	"price": 1200,
 	"formattedPrice": "12",
-	"currency": "SE",
+	"currency": "USD",
 }
 ```
 <ResponseField name="countryCode" type="string"> 
@@ -58,8 +62,4 @@ Authorization: taag_sk_xxxxxxxxx
     The pricing rule ID associated with this subscriber. 
 </ResponseField>
 
-This ensures returning customers always get the accurate pricing they originally signed up with.
-
-### Use case
-
-When it’s time to charge a subscriber again, use this endpoint to verify their pricing. It checks the pricing rule of the subscriber and gives you back the correct price.
+This ensures returning customers to always get the accurate active pricing.

@@ -7,7 +7,7 @@
     "light": "#5E55FB",
     "dark": "#3C35B5"
   },
-  "favicon": "/taagLogo.png",
+  "favicon": "./taagWhiteLogo.png",
   "navigation": {
     "_tabs": [
       {
@@ -46,15 +46,15 @@
           {
             "group": "Pricing",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create"
+              "api-reference/v1/pricing/getPricing",
+              "api-reference/v1/pricing/verifyPricing"
             ]
           },
           {
             "group": "Subscribers",
             "pages": [
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "api-reference/v1/subscribers/newSubscriber",
+              "api-reference/v1/subscribers/verifySubscriber"
             ]
           }
         ]
@@ -73,15 +73,15 @@
           {
             "group": "Pricing",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create"
+              "api-reference/v1/pricing/get",
+              "api-reference/v1/pricing/verify"
             ]
           },
           {
             "group": "Subscribers",
             "pages": [
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "api-reference/v1/subscribers/new",
+              "api-reference/v1/subscribers/verify"
             ]
           }
         ]

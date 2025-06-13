@@ -1,71 +1,78 @@
 ---
-title: Introduction
-description: "Welcome to the home of your new documentation"
+
+title: 'Introduction'
+description: "Our pricing engine handles and let's you implement dynamic, location-based pricing so you can offer affordable pricing to everyone and everywhere."
 ---
 
-<img
-  className="block dark:hidden"
-  src="/images/hero-light.png"
-  alt="Hero Light"
-/>
-<img
-  className="hidden dark:block"
-  src="/images/hero-dark.png"
-  alt="Hero Dark"
-/>
+## Base URL
 
-## Setting up
+Our pricing API is built on REST principles keeping things smooth and reliable. HTTPS is mandatory on every request. (No HTTP allowed here!)
 
-The first step to world-class documentation is setting up your editing environments.
+All your requests start with this base URL:
 
-<CardGroup cols={2}>
-  <Card
-    title="Edit Your Docs"
-    icon="pen-to-square"
-    href="https://mintlify.com/docs/quickstart"
-  >
-    Get your docs set up locally for easy development
-  </Card>
-  <Card
-    title="Preview Changes"
-    icon="image"
-    href="https://mintlify.com/docs/development"
-  >
-    Preview your changes before you push to make sure they're perfect
-  </Card>
-</CardGroup>
+```bash
+https://taag-api.carllabs.cc
+```
 
-## Make it yours
+## Authentication
 
-Update your docs to your brand and add valuable content for the best user conversion.
+To get going, just add an Authorization header to your request. Always include your **secret key** in all server-side calls and **public key** in client-side (like browser) calls. 
+
+
+**Public key** looks like this
+```bash
+Authorization: taag_pk_xxxxxxxxx
+```
+
+**Secret key** looks like this
+```bash
+Authorization: taag_sk_xxxxxxxxx
+```
+
+<Warning>
+  Keep your **secret key** safe and don’t share it around!
+</Warning>
+
+## API Endpoints
+
+So why not integrate now:
 
 <CardGroup cols={2}>
   <Card
-    title="Customize Style"
-    icon="palette"
-    href="https://mintlify.com/docs/settings/global"
+    title="Get Price"
+    icon="tag"
+    href="./api-reference/v1/pricing/get"
   >
-    Customize your docs to your company's colors and brands
+    Get the right price for your users based on their region.
   </Card>
   <Card
-    title="Reference APIs"
-    icon="code"
-    href="https://mintlify.com/docs/api-playground/openapi"
+    title="Verify Price"
+    icon="shield-check"
+    href="./api-reference/v1/pricing/verify"
   >
-    Automatically generate endpoints from an OpenAPI spec
+    Check if a price is correct before checking out.
   </Card>
   <Card
-    title="Add Components"
-    icon="screwdriver-wrench"
-    href="https://mintlify.com/docs/content/components/accordions"
+    title="Add Subscriber"
+    icon="user-plus"
+    href="./api-reference/v1/subcribers/new"
   >
-    Build interactive features and designs to guide your users
+    Add a new subscriber in just one step.
   </Card>
   <Card
-    title="Get Inspiration"
-    icon="stars"
-    href="https://mintlify.com/customers"
+    title="Verify Subscriber"
+    icon="user-check"
+    href="./api-reference/v1/subcribers/verify"
   >
-    Check out our showcase of our favorite documentation
+    Confirm if a subscriber exists or is active.
   </Card>
 </CardGroup>
+
+Set prices smartly while building products that scale.
+
+<Card
+  title="Pricing Endpoints"
+  href="./api-reference/v1/pricing"
+>
+  Adapt pricing the way top market leaders already do.
+</Card>
