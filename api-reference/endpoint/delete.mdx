@@ -3,12 +3,11 @@ title: 'Add Subscriber'
 openapi: 'POST /subcribers/new'
 ---
 
-### Use case
-
-Let’s say someone just checked out and paid. Now you want to register them using this endpoint. 
-You will send their `countryCode` and `ruleId`.
-
 ---
+
+```http POST
+/subscribers/new
+```
 
 ### Authentication
 
@@ -52,5 +51,10 @@ Store it in your database for future renewals...
 </Tip>
 </ResponseField>
 
+
+### Use case
+
+Let’s say someone just checked out and paid. Now you want to register them using this endpoint. 
+You will send their `countryCode` and `ruleId`.
 
 > Make sure to call this **after** you successfully charged the customer and confirmed the pricing. That way you will have all you need to manage their subscription later on.

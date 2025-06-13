@@ -3,12 +3,11 @@ title: 'Verify Price'
 openapi: 'POST /pricing/verify'
 ---
 
-### Use case
-Use this endpoint when someone’s ready to pay. It double-checks the pricing rule (using the `ruleId` you got earlier from the `GET /pricing` api endpoint) and returns the **actual amount** you should charge. It helps to keep things accurate.
+---
 
-<Note>
-    This is a server-side call and needs your **secret key** to work. Keep it safe!
-</Note>
+```http POST
+/pricing/verify
+```
 
 ### Authentication
 Make sure to include the `Authorization` header:
@@ -38,7 +37,7 @@ Example: `"cmb6mqodq000139dsl35qnn43"`
 
 </ResponseField>
 
-> **Note:** Just to be clear here, you get the countryCode and ruleId the in the [Get price](./get) api endpoint
+> **Note:** Just to be clear here, use the **countryCode** and **ruleId** you got from the [Get price](./get) api endpoint
 
 ### Response
 ```json
@@ -50,6 +49,7 @@ Example: `"cmb6mqodq000139dsl35qnn43"`
 }
 ```
 
-Perfect for checkout. This api call confirms the price validity for the selected country and rule, so no surprises when it's time to pay.
+### Use case
+Use this endpoint when someone’s ready to pay. It double-checks the pricing rule (using the `ruleId` you got earlier from the `GET /pricing` api endpoint) and returns the **actual amount** you should charge. It helps to keep things accurate.
 
 > **Tip:** Always verify pricing server-side before charging to avoid manipulation from the client side.

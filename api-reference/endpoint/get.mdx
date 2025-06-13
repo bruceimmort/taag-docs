@@ -3,28 +3,27 @@ title: 'Get Price'
 openapi: 'GET /pricing'
 ---
 
-Fetch the price based on where your user is in the world.          
-Just like that!
+---
 
-### Authorization
+```http GET
+/pricing
+```
+
+Fetch the price based on where your user is in the world. Just like that!
+
+---
 
 
-<ResponseField name="Authorization" required>
-</ResponseField>
+### Authentication
 
-All you need to use here is your **public key** as a value in Authorization.
+All you need to use here is your **public key** as a value of **Authorization** in header:
 
 ```http
 Authorization: taag_pk_xxxxxxxxx
 ```
 
-### Use case
-
-This run on the **client side**. It’s the part that shows people appropriate prices based on their region.
-
-Let’s say someone visits your site from Sweden? You’ll get price plans that were set for Sweden.
-
----
+<ResponseField name="Authorization" required>
+</ResponseField>
 
 ### Response
 
@@ -47,6 +46,10 @@ Let’s say someone visits your site from Sweden? You’ll get price plans that 
 }
 ```
 
-> **Tip:** The `ruleId` you get here is important — you’ll use it to **verify prices** when a user picks a plan.
+### Use case
+
+This run on the **client side**. It’s the part that shows people appropriate prices based on their region. Let’s say someone visits your site from Sweden! You’ll get price plans that were set for Sweden.
+
+> **Tip:** The `ruleId` you get here is important, you’ll use it to **verify prices** when a user picks a plan.
 
 ---

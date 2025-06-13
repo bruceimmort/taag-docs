@@ -9,7 +9,7 @@
   },
   "favicon": "/taagLogo.png",
   "navigation": {
-    "tabs": [
+    "_tabs": [
       {
         "tab": "Guides",
         "groups": [
@@ -34,6 +34,33 @@
           }
         ]
       },
+      {
+        "tab": "API Docs",
+        "groups": [
+          {
+            "group": "API Documentation",
+            "pages": [
+              "api-reference/introduction"
+            ]
+          },
+          {
+            "group": "Pricing",
+            "pages": [
+              "api-reference/endpoint/get",
+              "api-reference/endpoint/create"
+            ]
+          },
+          {
+            "group": "Subscribers",
+            "pages": [
+              "api-reference/endpoint/delete",
+              "api-reference/endpoint/webhook"
+            ]
+          }
+        ]
+      }
+    ],
+    "tabs": [
       {
         "tab": "API Docs",
         "groups": [

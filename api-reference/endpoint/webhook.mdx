@@ -2,3 +2,64 @@
 title: 'Verify Subscriber'
 openapi: 'POST /subscribers/verify'
 ---
+
+---
+
+```http POST
+/subscribers/verify
+```
+
+>   First time adding a subscriber?
+    Use the [add Subscriber](./add-subscriber) endpoint first to create their profile.
+
+---
+
+### Authentication
+
+Include the `Authorization` header with your **secret key**:
+
+```http
+Authorization: taag_sk_xxxxxxxxx
+```
+
+### Request body
+```json
+{
+  "subscriberId": "2d9b73d492898ebd600fbcae7b67c3a5"
+}
+```
+<ResponseField name="subscriberId" type="string" required> 
+    The unique ID of the subscriber you previously created using the [add Subscriber](./add-subscriber) endpoint. 
+    This ID links them to their pricing rule. 
+</ResponseField>
+
+### Response
+```json
+{
+	"success": true,
+	"price": 1200,
+	"formattedPrice": "12",
+	"currency": "SE",
+}
+```
+<ResponseField name="countryCode" type="string"> 
+    The country code on the subscriber’s pricing rule. 
+</ResponseField> 
+<ResponseField name="price" type="integer"> 
+    The actual price to charge the subscriber in **cents**. 
+</ResponseField> 
+<ResponseField name="formatedPrice" type="string"> 
+    The display friendly the price is what you'd show in your webapp or site. 
+</ResponseField> 
+<ResponseField name="currency" type="string"> 
+    The currency code to bill the subscriber in **USD**
+</ResponseField> 
+<ResponseField name="ruleId" type="string"> 
+    The pricing rule ID associated with this subscriber. 
+</ResponseField>
+
+This ensures returning customers always get the accurate pricing they originally signed up with.
+
+### Use case
+
+When it’s time to charge a subscriber again, use this endpoint to verify their pricing. It checks the pricing rule of the subscriber and gives you back the correct price.
