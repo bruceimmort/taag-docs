@@ -5,15 +5,20 @@ openapi: 'POST /subcribers/new'
 
 ---
 
-```http POST
-/subscribers/new
+
+### Use case
+
+Let’s say someone just checked out and paid. Now you want to register them using this endpoint. 
+You will send their `countryCode` and `ruleId`.
+```bash POST
+https://taag-api.carllabs.cc/v1/subscribers/new
 ```
 
-### Authentication
+### Authorization
 
-Make sure to include the `Authorization` header:
+Make sure to include the `Authorization` header with your `secret key`:
 
-```http
+```bash
 Authorization: taag_sk_xxxxxxxxx
 ```
 ### Request body
@@ -29,7 +34,7 @@ Authorization: taag_sk_xxxxxxxxx
 
 <ResponseField name="ruleId" type="string" required> 
     The pricing rule ID you used during checkout. 
-    You can grab this from the response of the [get price](./get) endpoint. 
+    You can grab this from the response of the [get price](../pricing/get) endpoint. 
 </ResponseField>
 
 ### Response
@@ -45,16 +50,9 @@ Authorization: taag_sk_xxxxxxxxx
 
 <ResponseField name="subscriberId" type="string"> 
     This is a unique ID for the subscriber you just added. 
-<Tip>
-Store it in your database for future renewals... 
 
-</Tip>
+<Note>Store the `subscriberId` in your database for future renewals... </Note>
+
 </ResponseField>
-
-
-### Use case
-
-Let’s say someone just checked out and paid. Now you want to register them using this endpoint. 
-You will send their `countryCode` and `ruleId`.
 
 > Make sure to call this **after** you successfully charged the customer and confirmed the pricing. That way you will have all you need to manage their subscription later on.
