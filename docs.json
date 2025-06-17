@@ -9,57 +9,6 @@
   },
   "favicon": "./taagWhiteLogo.png",
   "navigation": {
-    "_tabs": [
-      {
-        "tab": "Guides",
-        "groups": [
-          {
-            "group": "Take a tour",
-            "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Essentials",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API Docs",
-        "groups": [
-          {
-            "group": "API Documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Pricing",
-            "pages": [
-              "api-reference/v1/pricing/getPricing",
-              "api-reference/v1/pricing/verifyPricing"
-            ]
-          },
-          {
-            "group": "Subscribers",
-            "pages": [
-              "api-reference/v1/subscribers/newSubscriber",
-              "api-reference/v1/subscribers/verifySubscriber"
-            ]
-          }
-        ]
-      }
-    ],
     "tabs": [
       {
         "tab": "API Docs",
@@ -86,45 +35,6 @@
           }
         ]
       }
-    ],
-    "_global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
-  },
-  "_navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
-  },
-  "_footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
+    ]
   }
 }

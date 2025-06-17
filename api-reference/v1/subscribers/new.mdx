@@ -8,7 +8,7 @@ openapi: 'POST /subcribers/new'
 
 ### Use case
 
-Let’s say someone just checked out and paid. Now you want to register them using this endpoint. 
+If someone just checked out and paid.You have to register them using this endpoint so that you can be managing their subscription renewal in the future.
 You will send their `countryCode` and `ruleId`.
 ```bash POST
 https://taag-api.carllabs.cc/v1/subscribers/new
@@ -37,6 +37,10 @@ Authorization: taag_sk_xxxxxxxxx
     You can grab this from the response of the [get price](../pricing/get) endpoint. 
 </ResponseField>
 
+<Warning>
+  Make sure to call this **after** you successfully charged the customer and confirmed the pricing. That way you will have all you need to manage their subscription later on.
+</Warning>
+
 ### Response
 ```json
 {
@@ -50,9 +54,6 @@ Authorization: taag_sk_xxxxxxxxx
 
 <ResponseField name="subscriberId" type="string"> 
     This is a unique ID for the subscriber you just added. 
-
-<Note>Store the `subscriberId` in your database for future renewals... </Note>
-
 </ResponseField>
 
-> Make sure to call this **after** you successfully charged the customer and confirmed the pricing. That way you will have all you need to manage their subscription later on.
+<Note>Store the `subscriberId` in your database for future renewals... </Note>
