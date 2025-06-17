@@ -46,8 +46,8 @@ Authorization: taag_sk_xxxxxxxxx
 	"currency": "USD",
 }
 ```
-<ResponseField name="countryCode" type="string"> 
-    The country code on the subscriber’s pricing rule. 
+<ResponseField name="success" type="boolean"> 
+    Indicates that the price was fetched successfully. 
 </ResponseField> 
 <ResponseField name="price" type="integer"> 
     The actual price to charge the subscriber in **cents**. 
@@ -57,9 +57,6 @@ Authorization: taag_sk_xxxxxxxxx
 </ResponseField> 
 <ResponseField name="currency" type="string"> 
     The currency code to bill the subscriber in **USD**
-</ResponseField> 
-<ResponseField name="ruleId" type="string"> 
-    The pricing rule ID associated with this subscriber. 
 </ResponseField>
 
 This ensures returning customers to always get the accurate active pricing.
