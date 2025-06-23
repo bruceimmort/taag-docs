@@ -7,29 +7,48 @@
     "light": "#5E55FB",
     "dark": "#3C35B5"
   },
-  "favicon": "/taagLogo.png",
+  "favicon": "./taagWhiteLogo.png",
   "navigation": {
-    "_tabs": [
+    "tabs": [
       {
         "tab": "Guides",
+        "defaultGroup": "Take a tour",
+        "defaultPage": "./guides/introduction.md",
         "groups": [
           {
             "group": "Take a tour",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
+              "./guides/introduction"
             ]
           },
           {
-            "group": "Essentials",
+            "group": "Project",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
+              "guides/v1/project/new",
+              "guides/v1/project/analytics",
+              "guides/v1/project/subscribers",
+              "guides/v1/project/settings"
+            ]
+          },
+          {
+            "group": "Pricing plan",
+            "pages": [
+              "guides/v1/plan/new",
+              "guides/v1/plan/check"
+            ]
+          },
+          {
+            "group": "Pricing rule",
+            "pages": [
+              "guides/v1/rule/new",
+              "guides/v1/rule/edit",
+              "guides/v1/rule/delete"
+            ]
+          },
+          {
+            "group": "Integration",
+            "pages": [
+              "guides/v1/integration/connect"
             ]
           }
         ]
@@ -46,85 +65,19 @@
           {
             "group": "Pricing",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create"
+              "api-reference/v1/pricing/get",
+              "api-reference/v1/pricing/verify"
             ]
           },
           {
             "group": "Subscribers",
             "pages": [
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "api-reference/v1/subscribers/new",
+              "api-reference/v1/subscribers/verify"
             ]
           }
         ]
       }
-    ],
-    "tabs": [
-      {
-        "tab": "API Docs",
-        "groups": [
-          {
-            "group": "API Documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Pricing",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create"
-            ]
-          },
-          {
-            "group": "Subscribers",
-            "pages": [
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
-        ]
-      }
-    ],
-    "_global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
-  },
-  "_navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
-  },
-  "_footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
+    ]
   }
 }

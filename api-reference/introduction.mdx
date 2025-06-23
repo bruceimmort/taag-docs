@@ -6,62 +6,61 @@ description: "Our pricing engine handles and let's you implement dynamic, locati
 
 ## Base URL
 
-Our pricing API is built on REST principles keeping things smooth and reliable. HTTPS is mandatory on every request. (No HTTP allowed here!)
-
 All your requests start with this base URL:
 
 ```bash
 https://taag-api.carllabs.cc
 ```
 
-## Authentication
+## Authorization
 
-To get going, just add an Authorization header to your request. Here is your unique key and it should look like this:
+To get going, just add an Authorization header to your request. Always include your `Secret key` in all server-side calls and `Public key` in client-side (like browser) calls. 
 
-Public key
+
+**Public key** looks like this
 ```bash
 Authorization: taag_pk_xxxxxxxxx
 ```
 
-Secret key
+**Secret key** looks like this
 ```bash
 Authorization: taag_sk_xxxxxxxxx
 ```
 
-<Note>
-  Keep it safe and don’t share it around!
-</Note>
+<Warning>
+  Keep your **secret key** safe and don’t share it around!
+</Warning>
 
 ## API Endpoints
 
-Why not integrate now:
+So why not integrate now:
 
 <CardGroup cols={2}>
   <Card
     title="Get Price"
     icon="tag"
-    href="./endpoint/get"
+    href="./v1/pricing/get"
   >
     Get the right price for your users based on their region.
   </Card>
   <Card
     title="Verify Price"
     icon="shield-check"
-    href="./endpoint/create"
+    href="./v1/pricing/verify"
   >
     Check if a price is correct before checking out.
   </Card>
   <Card
     title="Add Subscriber"
     icon="user-plus"
-    href="./endpoint/delete"
+    href="./v1/subscribers/new"
   >
     Add a new subscriber in just one step.
   </Card>
   <Card
     title="Verify Subscriber"
     icon="user-check"
-    href="./endpoint/webhook"
+    href="./v1/subscribers/verify"
   >
     Confirm if a subscriber exists or is active.
   </Card>
@@ -71,7 +70,7 @@ Set prices smartly while building products that scale.
 
 <Card
   title="Pricing Endpoints"
-  href="./endpoint"
+  href="./v1/pricing"
 >
   Adapt pricing the way top market leaders already do.
 </Card>
