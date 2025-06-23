@@ -1,63 +1,76 @@
 ---
+
 title: 'Introduction'
+description: "Our pricing engine handles and let's you implement dynamic, location-based pricing so you can offer affordable pricing to everyone and everywhere."
 ---
 
-## What is Taag?
+## Base URL
 
-Taag is a pricing platform that helps you implement affordable pricing. Mostly if you are trying to launch or develop a Saas product. Build while scaling!
+All your requests start with this base URL:
 
-![title](/imgs/landing-app.png)
+```bash
+https://taag-api.carllabs.cc
+```
 
-## Orientation
+## Authorization
 
-When you first log into Taag, you will find a clean dashboard that takes you from creating a project to implement live pricing.
+To get going, just add an Authorization header to your request. Always include your `Secret key` in all server-side calls and `Public key` in client-side (like browser) calls. 
 
-And here is what you can implement with Taag :
 
-1. **Projects**
-are the base of pricing. Each project gets its own pricing, subscriber base, and analytics.
+**Public key** looks like this
+```bash
+Authorization: taag_pk_xxxxxxxxx
+```
 
-2. **Pricing Plans**
-within each project, you can create pricing plans according to the categories you have.
+**Secret key** looks like this
+```bash
+Authorization: taag_sk_xxxxxxxxx
+```
 
-3. **Pricing Rules**
-this is where you adjust your prices based on geographic regions. You can set prices for different countries and continents.
+<Warning>
+  Keep your **secret key** safe and don’t share it around!
+</Warning>
 
-4. **Subscriber Management**
-keep track of paying user of your service and where they are located.
+## API Endpoints
 
-5. **Analytics**
-monitor how your pricing performs across the world. See views, conversion rates, revenue that help you refine your pricing strategy.
-
-## Your First Steps
+So why not integrate now:
 
 <CardGroup cols={2}>
   <Card
-    title="Create a Project"
-    href="./project/new"
+    title="Get Price"
+    icon="tag"
+    href="./v1/pricing/get"
   >
-    Start by setting up your first project.
+    Get the right price for your users based on their region.
   </Card>
   <Card
-    title="Set up pricing plans"
-    href="./plan"
+    title="Verify Price"
+    icon="shield-check"
+    href="./v1/pricing/verify"
   >
-    Define your base pricing structure.
+    Check if a price is correct before checking out.
   </Card>
   <Card
-    title="Add pricing rules"
-    href="./rule/new"
+    title="Add Subscriber"
+    icon="user-plus"
+    href="./v1/subscribers/new"
   >
-    Add location-based changes to make your pricing fair across different regions.
+    Add a new subscriber in just one step.
   </Card>
   <Card
-    title="Integrate with Your App"
-    href="./integration"
+    title="Verify Subscriber"
+    icon="user-check"
+    href="./v1/subscribers/verify"
   >
-    Connect Taag to your application using our API to start handling prices.
+    Confirm if a subscriber exists or is active.
   </Card>
 </CardGroup>
 
-## What's next?
+Set prices smartly while building products that scale.
 
-Each section walks you through the steps needed to navigate and understand the feature.
+<Card
+  title="Pricing Endpoints"
+  href="./v1/pricing"
+>
+  Adapt pricing the way top market leaders already do.
+</Card>
