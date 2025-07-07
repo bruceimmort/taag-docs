@@ -45,8 +45,7 @@
             "group": "Pricing rule",
             "pages": [
               "guides/v1/rule/new",
-              "guides/v1/rule/edit",
-              "guides/v1/rule/delete"
+              "guides/v1/rule/edit"
             ]
           },
           {
